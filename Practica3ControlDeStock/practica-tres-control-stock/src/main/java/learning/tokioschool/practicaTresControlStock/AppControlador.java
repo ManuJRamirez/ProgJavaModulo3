@@ -57,6 +57,8 @@ import javafx.stage.Stage;
  * <li>Dentro de la tabla podremos ordenar de mayor a menor, de la A - Z y
  * viceversa en las 3 columnas correspondientes. Clickando en la cabecera de la
  * columna (se activará la "mano" en el cursor).</li>
+ * <li>Boton de Historico añadido para tener control del movimiento del stock de
+ * todos los productos</li>
  * </ul>
  */
 public class AppControlador {
@@ -88,10 +90,10 @@ public class AppControlador {
 	/** The btn mostrar todo. */
 	@FXML
 	private Button btnBorrarFiltros;
-	
-    /** The btn historico. */
-    @FXML
-    private Button btnHistorico;
+
+	/** The btn historico. */
+	@FXML
+	private Button btnHistorico;
 
 	/** The label identificador. */
 	@FXML
@@ -139,8 +141,11 @@ public class AppControlador {
 	 * aplicación.
 	 */
 	private ObservableList<Producto> listaProductos;
-	
-	/** Constante en la que se define el formato de fecha y hora usado para el historico. */
+
+	/**
+	 * Constante en la que se define el formato de fecha y hora usado para el
+	 * historico.
+	 */
 	private static final DateTimeFormatter FORMATO_FECHA_HORA = DateTimeFormatter.ofPattern("dd/MM/yyyy <--> HH:mm");
 
 	/**
@@ -203,16 +208,16 @@ public class AppControlador {
 		if (productoSeleccionado == null) {
 			return;
 		}
-		
+
 		int stockAnterior = productoSeleccionado.getStock();
-		
+
 		String nuevoNombre = textNombreProducto.getText();
 		int nuevoStock = Integer.parseInt(textStock.getText());
-		
+
 		if (nuevoStock != stockAnterior) {
 			String fecha = LocalDateTime.now().format(FORMATO_FECHA_HORA);
 			String tipo = nuevoStock > stockAnterior ? "Aumento" : "Reduccion";
-			
+
 			productoSeleccionado.getHistorico().add(new Historico(fecha, nuevoStock, tipo));
 		}
 
@@ -234,7 +239,8 @@ public class AppControlador {
 	 * producto a la lista, guardara la lista actualizada en el json y limpiará los
 	 * campos.
 	 * 
-	 * A la hora de crear un nuevo producto, guardaremos tambien el primer registro del historico y lo definiremos como "Nuevo Producto".
+	 * A la hora de crear un nuevo producto, guardaremos tambien el primer registro
+	 * del historico y lo definiremos como "Nuevo Producto".
 	 *
 	 * @param event acción del boton.
 	 */
@@ -264,13 +270,13 @@ public class AppControlador {
 		ventanaConfirmacion.getButtonTypes().setAll(btnSi, btnNo);
 
 		if (ventanaConfirmacion.showAndWait().get() == btnSi) {
-			
+
 			int stockInicial = Integer.parseInt(textStock.getText());
 			Producto prod = new Producto(nuevoID, textNombreProducto.getText(), stockInicial);
 			String fechaHora = LocalDateTime.now().format(FORMATO_FECHA_HORA);
 			Historico primeraMovimientoAgregarProducto = new Historico(fechaHora, stockInicial, "Nuevo Producto");
 			prod.getHistorico().add(primeraMovimientoAgregarProducto);
-			
+
 			listaProductos.add(prod);
 			ControladorDatos.guardarProductos(listaProductos);
 
@@ -369,47 +375,46 @@ public class AppControlador {
 		limpiarCampos();
 		restaurarBotones();
 	}
-	
-	
-    /**
-     * Metodo que define la acción del botón Historico.
-     * 
-     * Abre la ventana del Historico del Producto seleccionado.
-     *
-     * @param event the event
-     */
-    @FXML
-    void btnHistoricoAction(ActionEvent event) {
-    	Producto producto = tablaProductos.getSelectionModel().getSelectedItem();
-    	
-    	if (producto == null) {
-    		mostrarAlertaGenerica("Debes seleccionar un producto para ver su histórico");
-    		return;
-    	}
-    	
-    	try {
-    		FXMLLoader cargaVentana = new FXMLLoader(getClass().getResource("/vistaHistorico.fxml"));
-    		Parent root = cargaVentana.load();
-    		
-    		HistoricoControlador controladorHistorico = cargaVentana.getController();
-    		
-    		Stage ventana = new Stage();
-    		ventana.setTitle(producto.getIdentificador() + " -> " + producto.getNombreProducto());
-    		ventana.setScene(new Scene(root));
-    		ventana.initOwner(gridpanel.getScene().getWindow());
-    		ventana.initModality(Modality.WINDOW_MODAL);
-    		
-    		controladorHistorico.setStage(ventana);
-    		controladorHistorico.cargarHistorico(producto.getHistorico());
-    		ventana.setResizable(false);
-    		
-    		ventana.show();
-    		
-    	}catch (Exception error) {
-    		error.printStackTrace();
-    	}
 
-    }
+	/**
+	 * Metodo que define la acción del botón Historico.
+	 * 
+	 * Abre la ventana del Historico del Producto seleccionado.
+	 *
+	 * @param event the event
+	 */
+	@FXML
+	void btnHistoricoAction(ActionEvent event) {
+		Producto producto = tablaProductos.getSelectionModel().getSelectedItem();
+
+		if (producto == null) {
+			mostrarAlertaGenerica("Debes seleccionar un producto para ver su histórico");
+			return;
+		}
+
+		try {
+			FXMLLoader cargaVentana = new FXMLLoader(getClass().getResource("/vistaHistorico.fxml"));
+			Parent root = cargaVentana.load();
+
+			HistoricoControlador controladorHistorico = cargaVentana.getController();
+
+			Stage ventana = new Stage();
+			ventana.setTitle(producto.getIdentificador() + " -> " + producto.getNombreProducto());
+			ventana.setScene(new Scene(root));
+			ventana.initOwner(gridpanel.getScene().getWindow());
+			ventana.initModality(Modality.WINDOW_MODAL);
+
+			controladorHistorico.setStage(ventana);
+			controladorHistorico.cargarHistorico(producto.getHistorico());
+			ventana.setResizable(false);
+
+			ventana.show();
+
+		} catch (Exception error) {
+			error.printStackTrace();
+		}
+
+	}
 
 	/**
 	 * Generar nuevo identificiador.
