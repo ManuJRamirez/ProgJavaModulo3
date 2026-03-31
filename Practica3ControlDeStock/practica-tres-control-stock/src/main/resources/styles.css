@@ -1,0 +1,134 @@
+/*Labels */
+#labelIdentificador,
+#labelNombre,
+#labelStock {
+  -fx-text-fill: #0f172a;
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
+}
+
+/* textfields*/
+#textFieldIdentificador,
+#textFieldNombre,
+#textFieldStock {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #93c5fd;
+  -fx-border-radius: 6;
+  -fx-background-radius: 6;
+  -fx-font-size: 14px;
+  -fx-border-width: 2;
+}
+
+#textFieldIdentificador:focused,
+#textFieldNombre:focused,
+#textFieldStock:focused {
+  -fx-border-color: #2563eb;
+}
+
+/*Cursor con forma de mano en los botones*/
+#botonBuscar,
+#botonAgregar,
+#botonModificar,
+#botonAceptar,
+#botonCancelar,
+#botonBorrarFiltro {
+  -fx-cursor: hand;
+}
+
+/* Boton Buscar */
+#botonBuscar {
+  -fx-background-color: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+  -fx-text-fill: white;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0.2, 0, 1);
+}
+
+#botonBuscar:hover {
+  -fx-background-color: linear-gradient(to bottom, #1d4ed8, #3b82f6);
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 10, 0.4, 0, 4);
+  -fx-font-weight: bold;
+}
+
+/* Boton Borrar filtro */
+#botonBorrarFiltro {
+  -fx-background-color: linear-gradient(to bottom, #fafafa, #e6e6e6);
+  -fx-text-fill: #1f2937;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0.2, 0, 1);
+}
+
+#botonBorrarFiltro:hover {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 10, 0.4, 0, 4);
+  -fx-background-color: linear-gradient(to bottom, #f6f7f8, #dcdfe3);
+}
+
+/* Botones Agregar y Modificar */
+#botonAgregar,
+#botonModificar {
+  -fx-background-color: linear-gradient(to bottom, #fafafa, #e6e6e6);
+  -fx-text-fill: #1f2937;
+  -fx-background-insets: 0;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0.2, 0, 1);
+}
+
+#botonAgregar:hover,
+#botonModificar:hover {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 10, 0.4, 0, 4);
+  -fx-background-color: linear-gradient(to bottom, #f6f7f8, #dcdfe3);
+}
+
+/* Boton Aceptar */
+#botonAceptar {
+  -fx-background-color: linear-gradient(to bottom, #66bb6a, #4a9e55);
+  -fx-text-fill: white;
+  -fx-background-insets: 0;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0.2, 0, 1);
+}
+
+#botonAceptar:hover {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 10, 0.4, 0, 4);
+  -fx-background-color: linear-gradient(to bottom, #4a9e55, #66bb6a);
+}
+
+/* Boton Cancelar */
+#botonCancelar {
+  -fx-background-color: linear-gradient(to bottom, #ef5350, #d32f2f);
+  -fx-text-fill: white;
+  -fx-background-insets: 0;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0.2, 0, 1);
+}
+
+#botonCancelar:hover {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 10, 0.4, 0, 4);
+  -fx-background-color: linear-gradient(to bottom, #d32f2f, #ef5350);
+}
+
+/* Borde de la tabla */
+.table-view {
+  -fx-background-insets: 0;
+  -fx-background-color: #e0e0e0;
+}
+
+/*Cabecera de la tabla */
+#tablaproductos .column-header .label {
+  -fx-cursor: hand;
+}
+
+/* Filas alternas */
+#tablaproductos .table-row-cell:odd {
+  -fx-background-color: #eff6ff;
+}
+
+#tablaproductos .table-row-cell:even {
+  -fx-background-color: #ffffff;
+}
+
+/* Hover */
+#tablaproductos .table-row-cell:hover {
+  -fx-background-color: #dbeafe;
+}
+
+/* Selección de fila */
+#tablaproductos:focused .table-row-cell:selected {
+  -fx-background-color: #2563eb;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+}
