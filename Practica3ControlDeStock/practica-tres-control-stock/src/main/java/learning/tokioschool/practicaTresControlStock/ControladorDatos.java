@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package learning.tokioschool.practicaTresControlStock;
 
 import java.io.File;
@@ -21,6 +24,7 @@ import com.google.gson.reflect.TypeToken;
  * <li>Cargar los datos</li>
  * <li>Guardar datos. Al tratarse de un Json, guardaremos todos los datos cada
  * vez que modifiquemos algo. Si no encuentra nuestra "base de datos" creará una nueva.</li>
+ * </ul>
  */
 public class ControladorDatos {
 

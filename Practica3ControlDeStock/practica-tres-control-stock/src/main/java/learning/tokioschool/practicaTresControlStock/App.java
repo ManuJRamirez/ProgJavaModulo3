@@ -22,7 +22,7 @@ public class App extends Application {
 	 * En el método Main llamaremos a {@code launch()} para iniciar el ciclo de
 	 * javaFx.
 	 *
-	 * @param args
+	 * @param args .
 	 */
 	public static void main(String[] args) {
 		System.out.println("Cargando...");

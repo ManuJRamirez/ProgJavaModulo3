@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package learning.tokioschool.practicaTresControlStock;
 
 /**
@@ -20,9 +23,9 @@ public class Producto {
 	/**
 	 * Constructor de clase.
 	 *
-	 * @param identificador 
-	 * @param nombreProducto 
-	 * @param stock 
+	 * @param identificador identificador
+	 * @param nombreProducto nombre del producto
+	 * @param stock stock
 	 */
 	public Producto(String identificador, String nombreProducto, int stock) {
 		super();
