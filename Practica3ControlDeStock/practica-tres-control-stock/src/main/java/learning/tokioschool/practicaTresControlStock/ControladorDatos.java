@@ -47,24 +47,23 @@ public class ControladorDatos {
 	 */
 	public static List<Producto> cargarProductos() {
 
-		File archivoDatos = new File(FILE_PATH);
+	    File archivoDatos = new File(FILE_PATH);
 
-		if (!archivoDatos.exists()) {
-			return new ArrayList<>();
-		}
+	    if (!archivoDatos.exists()) {
+	        return new ArrayList<>();
+	    }
 
-		try (FileReader leerArchivo = new FileReader(archivoDatos)) {
-			Type listType = new TypeToken<List<Producto>>() {
-			}.getType();
-			List<Producto> listaProducto = gson.fromJson(leerArchivo, listType);
+	    try (FileReader leerArchivo = new FileReader(archivoDatos)) {
 
-			return listaProducto != null ? listaProducto : new ArrayList<>();
+	        Type listType = new TypeToken<List<Producto>>() {}.getType();
+	        List<Producto> listaProducto = gson.fromJson(leerArchivo, listType);
 
-		} catch (Exception error) {
-			error.printStackTrace();
-			return new ArrayList<>();
-		}
+	        return listaProducto != null ? listaProducto : new ArrayList<>();
 
+	    } catch (Exception error) {
+	        error.printStackTrace();
+	        return new ArrayList<>();
+	    }
 	}
 
 	/**

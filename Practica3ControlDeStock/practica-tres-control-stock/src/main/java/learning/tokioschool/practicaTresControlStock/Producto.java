@@ -3,6 +3,9 @@
  */
 package learning.tokioschool.practicaTresControlStock;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Clase Producto.
  * 
@@ -18,6 +21,10 @@ public class Producto {
 	
 	/** Atributo que declara la cantidad disponible en el stock. */
 	private int stock;
+	
+	/** Lista en la que vamos a almacenar los movimientos del stock. */
+	private List<Historico> historico = new ArrayList<>();
+
 	
 	
 	/**
@@ -87,6 +94,25 @@ public class Producto {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
+	
+	/**
+	 * Método Get del  historico.
+	 *
+	 * @return lista de historicos.
+	 */
+	public List<Historico> getHistorico() {
+        return historico;
+    }
+
+    /**
+     * Método Sets del listado historico.
+     *
+     * @param historico the new historico
+     */
+    public void setHistorico(List<Historico> historico) {
+        this.historico = historico;
+    }
+
 	
 	
 

@@ -125,5 +125,13 @@
             <Insets right="20.0" top="10.0" />
          </GridPane.margin>
       </Button>
+      <Button id="btnHistorico" fx:id="btnHistorico" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnHistoricoAction" prefHeight="33.0" prefWidth="100.0" text="Historico" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="TOP">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+      </Button>
    </children>
 </GridPane>
