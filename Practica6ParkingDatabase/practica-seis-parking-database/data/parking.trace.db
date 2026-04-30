@@ -1,0 +1,102 @@
+2026-04-28 20:14:02.631011+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+SELECT Matricula, Marca, Modelo, HoraEntrada, HoraSalida FROM Coches WHERE HoraSalida IS NULL [42104-240]
+2026-04-28 20:14:42.160500+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+SELECT Marca, Modelo, HoraEntrada, HoraSalida FROM Coches WHERE Matricula=? [42104-240]
+2026-04-28 20:14:42.221864+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+INSERT INTO Coches (Matricula, Marca, Modelo, HoraEntrada, HoraSalida) VALUES (?, ?, ?, ?, ?) [42104-240]
+2026-04-28 20:14:42.287924+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+SELECT Marca, Modelo, HoraEntrada, HoraSalida FROM Coches WHERE Matricula=? [42104-240]
+2026-04-28 20:37:02.727051+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+SELECT Marca, Modelo, HoraEntrada, HoraSalida FROM Coches WHERE Matricula=? [42104-240]
+2026-04-28 20:37:02.782760+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+INSERT INTO Coches (Matricula, Marca, Modelo, HoraEntrada, HoraSalida) VALUES (?, ?, ?, ?, ?) [42104-240]
+2026-04-28 20:37:02.839779+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+SELECT Marca, Modelo, HoraEntrada, HoraSalida FROM Coches WHERE Matricula=? [42104-240]
+2026-04-28 20:41:00.218315+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Tipo de dato desconocido : "DATETIME"
+Unknown data type: "DATETIME"; SQL statement:
+CREATE TABLE Coches (Matricula VARCHAR (10) NOT NULL PRIMARY KEY, Marca VARCHAR (10) NOT NULL, Modelo VARCHAR(20) NOT NULL, HoraEntrada DATETIME NOT NULL, HoraSalida DATETIME) [50004-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.readIfDataType1(Parser.java:5908)
+	at org.h2.command.Parser.readIfDataType(Parser.java:5739)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5721)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5600)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8983)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8926)
+	at org.h2.command.Parser.parseCreate(Parser.java:6483)
+	at org.h2.command.Parser.parsePrepared(Parser.java:648)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:559)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:647)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:563)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1160)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:147)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:61)
+	at learning.tokioschool.practicaSeisParkingDataBase.Parking.crearTabla(Parking.java:115)
+	at learning.tokioschool.practicaSeisParkingDataBase.App.main(App.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
+	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-04-28 20:41:15.594621+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+SELECT Marca, Modelo, HoraEntrada, HoraSalida FROM Coches WHERE Matricula=? [42104-240]
+2026-04-28 20:41:15.652351+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+INSERT INTO Coches (Matricula, Marca, Modelo, HoraEntrada, HoraSalida) VALUES (?, ?, ?, ?, ?) [42104-240]
+2026-04-28 20:41:15.719336+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COCHES" not found (this database is empty); SQL statement:
+SELECT Marca, Modelo, HoraEntrada, HoraSalida FROM Coches WHERE Matricula=? [42104-240]
+2026-04-28 20:44:15.578413+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Tipo de dato desconocido : "DATETIME"
+Unknown data type: "DATETIME"; SQL statement:
+CREATE TABLE Coches (Matricula VARCHAR (10) NOT NULL PRIMARY KEY, Marca VARCHAR (10) NOT NULL, Modelo VARCHAR(20) NOT NULL, HoraEntrada DATETIME NOT NULL, HoraSalida DATETIME) [50004-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.readIfDataType1(Parser.java:5908)
+	at org.h2.command.Parser.readIfDataType(Parser.java:5739)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5721)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5600)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8983)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8926)
+	at org.h2.command.Parser.parseCreate(Parser.java:6483)
+	at org.h2.command.Parser.parsePrepared(Parser.java:648)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:559)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:647)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:563)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1160)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:147)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:61)
+	at learning.tokioschool.practicaSeisParkingDataBase.Parking.crearTabla(Parking.java:115)
+	at learning.tokioschool.practicaSeisParkingDataBase.App.main(App.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
+	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
+	at java.base/java.lang.Thread.run(Thread.java:842)
